@@ -1,0 +1,115 @@
+:root {
+  --bg: #faf9f7;
+  --card: #ffffff;
+  --ink: #1a1a18;
+  --muted: #6b6a65;
+  --line: #e5e3dd;
+  --accent: #2f6f57;
+  --accent-bg: #eaf3ee;
+  --danger: #9a3232;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+header h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 0.25rem; }
+.sub { color: var(--muted); margin: 0 0 2rem; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.upload input { font-size: 0.9rem; }
+
+.status {
+  margin: 0.75rem 0 0;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.ask-row { display: flex; gap: 0.5rem; }
+.ask-row input {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+.ask-row input:focus { border-color: var(--accent); }
+
+button {
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.55; cursor: default; }
+
+.error {
+  color: var(--danger);
+  background: #fbeeee;
+  border: 1px solid #f0d4d4;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.answer-text { white-space: pre-wrap; }
+
+details { margin-top: 1rem; }
+summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.sources { list-style: none; padding: 0; margin: 0.75rem 0 0; }
+.sources li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.source-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.sim { color: var(--accent); }
+.sources p { margin: 0; font-size: 0.88rem; color: #333; }

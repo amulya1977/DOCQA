@@ -1,0 +1,33 @@
+Acme Cloud — Support Handbook
+
+Password reset
+To reset your password, click "Forgot password" on the login page. You will
+receive an email with a reset link that is valid for 30 minutes. If the link
+expires, request a new one. For security, password resets are not available
+over phone or chat.
+
+Two-factor authentication
+Two-factor authentication (2FA) can be enabled under Settings > Security. We
+support authenticator apps (TOTP) and hardware security keys. SMS-based 2FA is
+being deprecated and will be removed at the end of the year.
+
+Refunds and billing
+Annual plans are billed yearly and include a 14-day free trial. Refunds are
+available within 30 days of the initial purchase. To request a refund, contact
+support with your order number. Monthly plans are non-refundable but can be
+cancelled at any time, stopping the next charge.
+
+Mobile apps
+The Acme mobile app is available for iOS and Android. Search "Acme Cloud" in the
+App Store or Google Play. The mobile app supports offline mode for documents
+that have been opened at least once while online.
+
+Data residency
+Customer data is stored in the region selected at signup: US, EU, or APAC. Data
+does not leave its region except for aggregated, anonymized usage metrics.
+Enterprise customers can request a signed data processing agreement.
+
+Service limits
+Free accounts are limited to 5 projects and 1 GB of storage. Pro accounts allow
+unlimited projects and 100 GB of storage. Rate limits apply to the API: 60
+requests per minute on Free, 600 on Pro, and custom limits on Enterprise.
