@@ -16,6 +16,7 @@ from .db import get_conn
 from .extract import extract_text
 from .ingest import ingest_text
 from .query import answer_question
+from .agent import run_agent
 
 app = FastAPI(title="Doc Q&A (RAG)")
 
@@ -30,6 +31,16 @@ app.add_middleware(
 
 class AskRequest(BaseModel):
     question: str
+
+
+class AgentMessage(BaseModel):
+    role: str      # "user" or "assistant"
+    content: str
+
+
+class AgentRequest(BaseModel):
+    question: str
+    history: list[AgentMessage] = []   # prior turns, for follow-up memory
 
 
 @app.get("/health")
@@ -66,3 +77,16 @@ def ask(req: AskRequest):
         return answer_question(conn, question)
     finally:
         conn.close()
+
+
+@app.post("/agent")
+def agent(req: AgentRequest):
+    """Agentic endpoint: the LLM decides which tools to use (document search,
+    web search, or answer directly), can self-correct, and supports follow-up
+    memory via the history field."""
+    question = req.question.strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="Question must not be empty.")
+
+    history = [{"role": m.role, "content": m.content} for m in req.history]
+    return run_agent(question, history)

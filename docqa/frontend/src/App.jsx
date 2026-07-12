@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AgentChat from "./AgentChat.jsx";
 
 const API = "http://localhost:8000";
 
@@ -105,7 +106,7 @@ export default function App() {
                 {result.sources.map((s, i) => (
                   <li key={i}>
                     <div className="source-head">
-                      <span>chunk {i + 1} · {s.source}</span>
+                      <span>chunk {i + 1}</span>
                       <span className="sim">similarity {s.similarity}</span>
                     </div>
                     <p>{s.content}</p>
@@ -116,6 +117,10 @@ export default function App() {
           )}
         </section>
       )}
+
+      <section className="card">
+        <AgentChat />
+      </section>
     </div>
   );
 }
